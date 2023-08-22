@@ -18,5 +18,6 @@ module.exports = {
         process.exit();
       }
     }
-  }
+  },
+  currencies: ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD'] //define whichever currencies required in this
 };
