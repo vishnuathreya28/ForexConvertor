@@ -19,5 +19,6 @@ module.exports = {
       }
     }
   },
-  currencies: ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD'] //define whichever currencies required in this
+  currencies: ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD'], //define whichever currencies required in this
+  startDate: '2023-08-14' //add date from when data needs to be added to mongodb collection
 };

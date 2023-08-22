@@ -51,4 +51,12 @@ output is generated as
     "convertedAmount": 0.3105590062111801
 }
 
-2. 
+2. http://localhost:3000/exchange-rates/live - to check live rates based on the data that is mentioned in config.js date array
+
+3. http://localhost:3000/forex/history - gives all data from startDate mentioned in config.js till today
+   exchangeRates is an array of objects containing two objects currency and rate
+   everything w.r.t 1USD
+   there's also attempt to add some custom history functionality which can help to get data with custom date range 
+   
+    http://localhost:3000/forex/custom-history?startDate=2023-08-15&endDate=2023-08-20
+    need to add custom currency functionality.
