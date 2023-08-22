@@ -46,7 +46,7 @@ app.get('/convert', async (req, res) => {
   }
 });
 
-
+app.use('/exchange', exchangeRatesRouter);
 app.use('/historical', historicalDataRouter);
 
 app.listen(port, () => {
