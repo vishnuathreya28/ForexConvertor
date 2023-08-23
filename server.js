@@ -4,7 +4,7 @@ const conversionRoutes = require('./routes/conversionRoutes');
 const exchangeRatesRoutes = require('./routes/exchangeRatesRoutes');
 const forexHistoryController = require('./controllers/forexHistoryController');
 const forexHistoryRoutes = require('./routes/forexHistoryRoutes');
-const rateLimitMiddleware = require('./rateLimitMiddleware');
+const rateLimitMiddleware = require('./middleware/rateLimitMiddleware');
 const config = require('./config/config'); // Import your config
 
 const app = express();
