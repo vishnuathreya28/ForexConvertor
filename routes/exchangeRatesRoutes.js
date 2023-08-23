@@ -2,10 +2,11 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 const config = require('../config/config'); // Import your config
+const authenticateToken = require('../middleware/authenticateToken');
 
 const prominentCurrencies = config.currencies; // Add more currencies as needed
 
-router.get('/live', async (req, res) => {
+router.get('/live', authenticateToken, async (req, res) => {
   try {
     const exchangeRateResponse = await axios.get(
         'https://openexchangerates.org/api/latest.json?app_id=' + config.apiKey

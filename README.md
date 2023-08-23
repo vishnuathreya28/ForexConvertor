@@ -66,3 +66,14 @@ output is generated as
 
 
 in redis if you ping you get pong
+
+5. okay for authentication
+
+first go to http://localhost:3000/auth/login (POST)
+then take the JWT key that has been generated
+once you copy the key
+
+final endpoints -> make sure of their methods GET and POST properly 
+1.http://localhost:3000/api/conversion/convert
+2.http://localhost:3000/api/exchange-rates/live
+3.http://localhost:3000/api/forex/history
