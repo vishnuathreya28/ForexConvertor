@@ -60,3 +60,6 @@ output is generated as
    
     http://localhost:3000/forex/custom-history?startDate=2023-08-15&endDate=2023-08-20
     need to add custom currency functionality.
+
+4. rate limiting is defined in rateLimitMiddleware.js
+    you can define the number of times a user can access the APi using this
