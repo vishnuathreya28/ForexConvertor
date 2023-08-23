@@ -63,3 +63,6 @@ output is generated as
 
 4. rate limiting is defined in rateLimitMiddleware.js
     you can define the number of times a user can access the APi using this
+
+
+in redis if you ping you get pong

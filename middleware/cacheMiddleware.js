@@ -1,5 +1,9 @@
 const redis = require("redis");
-const client = redis.createClient();
+const config = require("../config/config")
+
+
+const client = redis.createClient(config.redisHost, config.redisPort);
+
 
 const cacheMiddleware = (req, res, next) => {
   const key = req.originalUrl;

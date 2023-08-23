@@ -5,13 +5,15 @@ const exchangeRatesRoutes = require('./routes/exchangeRatesRoutes');
 const forexHistoryController = require('./controllers/forexHistoryController');
 const forexHistoryRoutes = require('./routes/forexHistoryRoutes');
 const rateLimitMiddleware = require('./middleware/rateLimitMiddleware');
-const config = require('./config/config'); // Import your config
+// const cacheMiddleware = require('./middleware/cacheMiddleware');
+const config = require('./config/config');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to MongoDB using the configuration from config.js
 config.database.connect();
+
 
 app.use(bodyParser.json());
 
