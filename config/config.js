@@ -20,8 +20,8 @@ module.exports = {
     }
   },
   currencies: ['USD', 'EUR', 'GBP', 'JPY', 'CAD', 'AUD', 'INR'], //define whichever currencies required in this
-  startDate: '2023-08-13', //add date from when data needs to be added to mongodb collection
+  startDate: '2023-08-13'//add date from when data needs to be added to mongodb collection
 
-  redisHost:'localhost', // these two parameters are for redis connection to maintain cache
-  redisPort: 6379
 };
+
+
