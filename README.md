@@ -1,18 +1,106 @@
-# ForexConvertor
-Backend Project which gives live forex conversion rate
+Forex Converter Service
 
-The Project has the following Functionality.
+A backend service that provides live foreign exchange (FX) conversion rates, historical rate storage, and API usage controls.
+Designed as a financial data service with an emphasis on correctness, rate limiting, and persistence.
 
--> it can convert currency from one forex to the other as long as their right names are mentioned.
--> can display live values of currency required as per user requirements.
--> it can store data of all currency prev value.
--> it can limit the number of API calls being made since there's limited number of those.
+Overview
 
-for all these detailed documentation with all endpoints are mentioned in the PDF file.
+This project exposes REST APIs to:
 
-There are certain places you need to make edits for it to run on your system properly.
-1. Change the API key.
-2. Change the MongoDB database connection endpoint
-3. To define the currencies for which live values need to come, change the array of currencies in config.js
-4. To limit the number of max API calls being made make edits in rateLimitMiddleware.js
-5. To define the startDate from where historical data needs to be stored make changes in config.js startDate
+Convert between supported currency pairs using live FX rates
+
+Fetch current exchange rates for selected currencies
+
+Store and query historical exchange rate data
+
+Control and optimize third-party API usage through rate limiting
+
+The system is structured to simulate a real-world financial data ingestion and serving pipeline, rather than a one-off conversion utility.
+
+Key Features
+
+Live FX Rate Conversion
+
+Converts between supported currency pairs using real-time exchange rate data
+
+Validates currency inputs to prevent invalid conversions
+
+Current Rate Retrieval
+
+Allows clients to fetch live rates for a configurable set of currencies
+
+Designed for extensibility as additional currency pairs are added
+
+Historical Data Persistence
+
+Stores previous exchange rate values in a database
+
+Enables tracking and analysis of rate changes over time
+
+API Call Optimization & Rate Limiting
+
+Implements middleware to restrict the number of outbound API calls
+
+Prevents exceeding third-party API quotas
+
+Reduces unnecessary network requests by caching and controlled polling
+
+Architecture (High-Level)
+
+Backend: Node.js (REST API)
+
+Database: MongoDB (historical rate storage)
+
+External Dependency: Third-party FX rate provider
+
+Middleware:
+
+Rate limiting
+
+Configuration-based controls for currencies and data windows
+
+The service is intentionally modular so that:
+
+Data sources can be swapped
+
+Storage can be extended
+
+Rate-limiting policies can be tuned independently
+
+Configuration & Setup
+
+Before running the service locally, update the following configuration values:
+
+API Key
+
+Replace the FX provider API key with your own credentials
+
+Database Connection
+
+Update the MongoDB connection string to point to your local or hosted instance
+
+Tracked Currencies
+
+Modify the currencies array in config.js to define which currencies are fetched and stored
+
+Rate Limiting
+
+Adjust thresholds in rateLimitMiddleware.js to control the maximum number of API calls
+
+Historical Data Window
+
+Update the startDate value in config.js to define how far back historical data should be collected
+
+Design Considerations
+
+API quota awareness: Designed to operate within strict third-party API limits
+
+Data correctness: Ensures consistent currency handling and validation
+
+Extensibility: Built to support additional currencies, data sources, or storage backends
+
+Separation of concerns: Configuration, rate limiting, and data logic are isolated for maintainability
+
+Notes
+
+This project was originally developed as part of a quantitative/financial engineering application and focuses on financial data handling and backend system design rather than trading strategy or alpha generation.
